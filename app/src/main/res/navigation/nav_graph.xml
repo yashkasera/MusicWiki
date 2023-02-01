@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.yashkasera.musicwiki.ui.WelcomeFragment"
+        tools:layout="@layout/fragment_welcome">
+
+        <action
+            android:id="@+id/action_welcomeFragment_to_genreFragment"
+            app:destination="@id/genreFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
+    <fragment
+        android:id="@+id/genreFragment"
+        android:name="com.yashkasera.musicwiki.ui.genre.GenreFragment"
+        tools:layout="@layout/fragment_genre">
+
+        <action
+            android:id="@+id/action_genreFragment_to_genreDetailsFragment"
+            app:destination="@id/genreDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/genreDetailsFragment"
+        android:name="com.yashkasera.musicwiki.ui.genredetails.GenreDetailsFragment"
+        tools:layout="@layout/fragment_genre_details">
+
+        <argument
+            android:name="genre"
+            app:argType="com.yashkasera.musicwiki.model.Genre" />
+        <action
+            android:id="@+id/action_genreDetailsFragment_to_artistFragment"
+            app:destination="@id/artistFragment" />
+        <action
+            android:id="@+id/action_genreDetailsFragment_to_albumFragment"
+            app:destination="@id/albumFragment" />
+        <action
+            android:id="@+id/action_genreDetailsFragment_to_trackFragment"
+            app:destination="@id/trackFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artistFragment"
+        android:name="com.yashkasera.musicwiki.ui.artist.ArtistFragment"
+        android:label="ArtistFragment"
+        tools:layout="@layout/fragment_artist">
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_artistFragment_self"
+            app:destination="@id/artistFragment" />
+        <action
+            android:id="@+id/action_artistFragment_to_albumFragment"
+            app:destination="@id/albumFragment" />
+        <action
+            android:id="@+id/action_artistFragment_to_trackFragment"
+            app:destination="@id/trackFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/albumFragment"
+        android:name="com.yashkasera.musicwiki.ui.album.AlbumFragment"
+        android:label="AlbumFragment"
+        tools:layout="@layout/fragment_album" >
+        <argument
+            android:name="artist"
+            app:argType="string" />
+        <argument
+            android:name="album"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_albumFragment_to_trackFragment"
+            app:destination="@id/trackFragment" />
+        <action
+            android:id="@+id/action_albumFragment_self"
+            app:destination="@id/albumFragment" />
+        <action
+            android:id="@+id/action_albumFragment_to_artistFragment"
+            app:destination="@id/artistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackFragment"
+        android:name="com.yashkasera.musicwiki.ui.track.TrackFragment"
+        android:label="TrackFragment"
+        tools:layout="@layout/fragment_track">
+        <argument
+            android:name="artist"
+            app:argType="string" />
+        <argument
+            android:name="track"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_trackFragment_to_albumFragment"
+            app:destination="@id/albumFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,41 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MusicWiki" parent="Theme.Material3.Dark.NoActionBar">
+         <item name="colorPrimary">@color/purple_1</item>
+         <item name="colorPrimaryVariant">@color/purple_2</item>
+         <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/ebony</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/ebony</item>
+    </style>
+
+    <style name="Theme.MusicWiki" parent="Base.Theme.MusicWiki">
+        <item name="android:fontFamily">@font/dm_sans</item>
+        <item name="buttonStyle">@style/Theme.MusicWiki.Button</item>
+    </style>
+
+    <style name="Theme.MusicWiki.Button" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_selector</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="TextAppearance.MusicWiki.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:fontFamily">@font/dm_sans_medium</item>
+        <item name="android:textColor">@color/purple_3</item>
+    </style>
+
+    <style name="TextAppearance.MusicWiki.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:fontFamily">@font/dm_sans_medium</item>
+        <item name="fontFamily">@font/dm_sans_medium</item>
+        <item name="android:textColor">@color/purple_3</item>
+    </style>
+
+
+    <style name="Theme.MusicWiki.CircularImage">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Theme.MusicWiki.RoundedSquareImage">
+        <item name="cornerSize">10%</item>
+    </style>
+</resources>
