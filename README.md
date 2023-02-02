@@ -17,11 +17,11 @@ The application also utilizes Retrofit for API communication.
 - View album and artist details
 
 ## Requirements
-- Android 9.0 or higher
+- Android 7.0 or higher
 - Internet connection
 
 ## How to use
-1. Download the apk from the Google Play Store or build the project from the source code.
+1. Download the apk from the latest version release or build the project from the source code.
 1. Launch the app and use the search bar to look up albums, artists, or tracks.
 1. Browse through the results and tap on an item to view more details.
 
